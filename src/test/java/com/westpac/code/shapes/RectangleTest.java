@@ -8,7 +8,7 @@ import java.util.Random;
 import org.junit.Test;
 
 import main.java.com.westpac.code.shapes.Rectangle;
-import main.java.com.westpac.code.visitors.AreaVisitorImp;
+import main.java.com.westpac.code.visitors.AreaVisitor;
 
 public class RectangleTest {
 
@@ -26,18 +26,18 @@ public class RectangleTest {
 		double randomNumber = new Random().nextDouble() * 100;
 		double randomNumber1 = new Random().nextDouble() * 100;
 		Rectangle rectangle = new Rectangle(randomNumber, randomNumber1);
-		assertFalse(rectangle.accept(new AreaVisitorImp()) == 0.0);
+		assertFalse(rectangle.accept(new AreaVisitor()) == 0.0);
 	}
 	
 	@Test
 	public void testAcceptReturnsZero(){
 		Rectangle rectangle = new Rectangle(positive, negative);
-		assertTrue(rectangle.accept(new AreaVisitorImp()) == 0.0);
+		assertTrue(rectangle.accept(new AreaVisitor()) == 0.0);
 	}
 	
 	@Test
 	public void testAcceptReturnsCorrectValue(){
 		Rectangle rectangle = new Rectangle(positive, positive);
-		assertTrue(rectangle.accept(new AreaVisitorImp()) == 100);
+		assertTrue(rectangle.accept(new AreaVisitor()) == 100);
 	}
 }

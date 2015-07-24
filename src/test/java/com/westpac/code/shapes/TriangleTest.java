@@ -8,7 +8,7 @@ import java.util.Random;
 import org.junit.Test;
 
 import main.java.com.westpac.code.shapes.Triangle;
-import main.java.com.westpac.code.visitors.AreaVisitorImp;
+import main.java.com.westpac.code.visitors.AreaVisitor;
 
 public class TriangleTest {
 	int positive = 10;
@@ -25,18 +25,18 @@ public class TriangleTest {
 		double randomNumber = new Random().nextDouble() * 100;
 		double randomNumber1 = new Random().nextDouble() * 100;
 		Triangle triangle = new Triangle(randomNumber, randomNumber1);
-		assertFalse(triangle.accept(new AreaVisitorImp()) == 0.0);
+		assertFalse(triangle.accept(new AreaVisitor()) == 0.0);
 	}
 	
 	@Test
 	public void testAcceptReturnsZero(){
 		Triangle triangle = new Triangle(positive, negative);
-		assertTrue(triangle.accept(new AreaVisitorImp()) == 0.0);
+		assertTrue(triangle.accept(new AreaVisitor()) == 0.0);
 	}
 	
 	@Test
 	public void testAcceptReturnsCorrectValue(){
 		Triangle triangle = new Triangle(positive, positive);
-		assertTrue(triangle.accept(new AreaVisitorImp()) == 50);
+		assertTrue(triangle.accept(new AreaVisitor()) == 50);
 	}
 }

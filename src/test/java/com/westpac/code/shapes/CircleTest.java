@@ -8,7 +8,7 @@ import java.util.Random;
 import org.junit.Test;
 
 import main.java.com.westpac.code.shapes.Circle;
-import main.java.com.westpac.code.visitors.AreaVisitorImp;
+import main.java.com.westpac.code.visitors.AreaVisitor;
 
 public class CircleTest {
 	
@@ -25,18 +25,18 @@ public class CircleTest {
 	public void testAcceptDoesntReturnZero(){
 		double randomNumber = new Random().nextDouble() * 100;
 		Circle circle = new Circle(randomNumber);
-		assertFalse(circle.accept(new AreaVisitorImp()) == 0.0);
+		assertFalse(circle.accept(new AreaVisitor()) == 0.0);
 	}
 	
 	@Test
 	public void testAcceptReturnsZero(){
 		Circle circle = new Circle(negative);
-		assertTrue(circle.accept(new AreaVisitorImp()) == 0.0);
+		assertTrue(circle.accept(new AreaVisitor()) == 0.0);
 	}
 	
 	@Test
 	public void testAcceptReturnsCorrectValue(){
 		Circle circle = new Circle(positive);
-		assertTrue(circle.accept(new AreaVisitorImp()) == 314.1592653589793);
+		assertTrue(circle.accept(new AreaVisitor()) == 314.1592653589793);
 	}
 }

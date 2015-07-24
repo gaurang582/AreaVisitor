@@ -3,7 +3,7 @@
  */
 package main.java.com.westpac.code.shapes;
 
-import main.java.com.westpac.code.visitors.AreaVisitor;
+import main.java.com.westpac.code.visitors.Visitor;
 
 /**
  * This class represents Circle shape.
@@ -21,8 +21,8 @@ public class Triangle implements Shape{
 	}
 
 	@Override
-	public double accept(AreaVisitor areaVisitor) {
-		return areaVisitor.visit(this);
+	public double accept(Visitor visitor) {
+		return visitor.visit(this);
 	}
 
 	@Override

@@ -3,7 +3,7 @@
  */
 package main.java.com.westpac.code.shapes;
 
-import main.java.com.westpac.code.visitors.AreaVisitor;
+import main.java.com.westpac.code.visitors.Visitor;
 
 /**
  * This interface defines contract for all shape object.
@@ -12,10 +12,10 @@ import main.java.com.westpac.code.visitors.AreaVisitor;
 public interface Shape {
 	
 	/**
-	 * @param areaVisitor visitor class 
+	 * @param visitor visitor class 
 	 * @return area of the shape
 	 */
-	double accept(AreaVisitor areaVisitor);
+	double accept(Visitor visitor);
 	
 	/**
 	 * @return the type of the shape.

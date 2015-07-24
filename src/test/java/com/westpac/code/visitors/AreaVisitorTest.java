@@ -9,40 +9,40 @@ import org.junit.Test;
 
 import main.java.com.westpac.code.shapes.Circle;
 import main.java.com.westpac.code.visitors.AreaVisitor;
-import main.java.com.westpac.code.visitors.AreaVisitorImp;
+import main.java.com.westpac.code.visitors.Visitor;
 
-public class AreaVisitorImpTest {
+public class AreaVisitorTest {
 	
 	int negative = -10;
 	int positive = 10;
 
 	@Test
 	public void testVisitCircleWithNull() {
-		AreaVisitor areaVisitor = new AreaVisitorImp();
+		Visitor visitor = new AreaVisitor();
 		Circle circle = null;
-		assertTrue(areaVisitor.visit(circle) == 0);
+		assertTrue(visitor.visit(circle) == 0);
 	}
 	
 	@Test
 	public void testVisitCircleWithNegativeRadius() {
-		AreaVisitor areaVisitor = new AreaVisitorImp();
+		Visitor visitor = new AreaVisitor();
 		Circle circle = new Circle(negative);
-		assertTrue(areaVisitor.visit(circle) == 0);
+		assertTrue(visitor.visit(circle) == 0);
 	}
 	
 	@Test
 	public void testVisitCircleReturnsCorrectValue() {
-		AreaVisitor areaVisitor = new AreaVisitorImp();
+		Visitor visitor = new AreaVisitor();
 		Circle circle = new Circle(positive);
-		assertTrue(areaVisitor.visit(circle) == 314.1592653589793);
+		assertTrue(visitor.visit(circle) == 314.1592653589793);
 	}
 	
 	@Test
 	public void testVisitCircleDoesntReturnZero() {
-		AreaVisitor areaVisitor = new AreaVisitorImp();
+		Visitor visitor = new AreaVisitor();
 		double randomNumber = new Random().nextDouble() * 100;
 		Circle circle = new Circle(randomNumber);
-		assertFalse(areaVisitor.visit(circle) == 0);
+		assertFalse(visitor.visit(circle) == 0);
 	}
 
 }

@@ -9,8 +9,8 @@ import main.java.com.westpac.code.shapes.Circle;
 import main.java.com.westpac.code.shapes.Rectangle;
 import main.java.com.westpac.code.shapes.Shape;
 import main.java.com.westpac.code.shapes.Triangle;
+import main.java.com.westpac.code.visitors.Visitor;
 import main.java.com.westpac.code.visitors.AreaVisitor;
-import main.java.com.westpac.code.visitors.AreaVisitorImp;
 
 /**
  * <p>This class will calculate area of 3 shapes, rectangle, circle and triangle with random inputs varying from 0 - LIMIT(default 100)</p>
@@ -56,7 +56,7 @@ public static void main(String[] args){
 	
 
 	private static void calulateArea(List<Shape> shapes) {
-		AreaVisitor areaVisitor = new AreaVisitorImp();
+		Visitor areaVisitor = new AreaVisitor();
 		
 		if(shapes !=null && !shapes.isEmpty()){
 			for(Shape shape:shapes){

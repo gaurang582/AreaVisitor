@@ -5,33 +5,39 @@ import main.java.com.westpac.code.shapes.Rectangle;
 import main.java.com.westpac.code.shapes.Triangle;
 
 /**
- * This interface defined contract for Visitor class to calculate area of supported shapes.
+ * 
+ * This class provides methods to calculate area for following shapes {@link Circle}, {@link Rectangle} and {@link Triangle}.
  * 
  * @author gaurangpathare
+ * 
  */
-public interface AreaVisitor {
+public class AreaVisitor implements Visitor {
 
-	/**
-	 * This method returns area for class {@link Circle}
-	 *
-	 * @param circle valid circle object
-	 * @return area of circle and 0 is the object is null or radius is not a positive value.
-	 */
-	double visit(Circle circle);
+	@Override
+	public double visit(Circle circle) {
+		double area = 0;
+		if(circle!= null && circle.getRadius() > 0){
+			double radiusSq = circle.getRadius() * circle.getRadius();
+			area = radiusSq * circle.getPi();
+		}
+		return area;
+	}
 
+	@Override
+	public double visit(Rectangle rectangle) {
+		double area = 0;
+		if(rectangle != null && rectangle.getBreath() > 0 && rectangle.getLength() > 0){
+			area = rectangle.getBreath() * rectangle.getLength();
+		}
+		return area;
+	}
 	
-	/**
-	 * This method returns area for class {@link Rectangle}
-	 * @param rectangle valid rectangle object
-	 * @return area of rectangle and 0 is the object is null or length or breadth is not a positive value.
-	 */
-	double visit(Rectangle rectangle);
-
-	/**
-	 * This method returns area for class {@link Triangle}
-	 * 
-	 * @param triangle valid triangle object
-	 * @return area of triangle and 0 is the object is null or base or height is not a positive value.
-	 */
-	double visit(Triangle triangle);
+	@Override
+	public double visit(Triangle triangle) {
+		double area = 0;
+		if(triangle != null && triangle.getBase() > 0 && triangle.getHeight() > 0){
+			area = (triangle.getBase() * triangle.getHeight()) / 2;
+		}
+		return area;
+	}
 }

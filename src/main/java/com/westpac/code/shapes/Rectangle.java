@@ -3,7 +3,7 @@
  */
 package main.java.com.westpac.code.shapes;
 
-import main.java.com.westpac.code.visitors.AreaVisitor;
+import main.java.com.westpac.code.visitors.Visitor;
 
 /**
  * This class represents Rectangle shape.
@@ -22,8 +22,8 @@ public class Rectangle implements Shape {
 	}
 
 	@Override
-	public double accept(AreaVisitor areaVisitor) {
-		return areaVisitor.visit(this);
+	public double accept(Visitor visitor) {
+		return visitor.visit(this);
 	}
 
 	@Override
