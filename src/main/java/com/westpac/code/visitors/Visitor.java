@@ -2,10 +2,11 @@ package main.java.com.westpac.code.visitors;
 
 import main.java.com.westpac.code.shapes.Circle;
 import main.java.com.westpac.code.shapes.Rectangle;
+import main.java.com.westpac.code.shapes.Shape;
 import main.java.com.westpac.code.shapes.Triangle;
 
 /**
- * This interface defined contract for Visitor class to calculate area of supported shapes.
+ * This interface defined contract for Visitor class to visit supported {@link Shape} classes.
  * 
  * @author gaurangpathare
  */
