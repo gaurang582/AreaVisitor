@@ -10,4 +10,6 @@ Assumptions:
 - To keep it simple, except for JUnit not other 3rd party library have been used. 
 - Logging, spring and maven support can be added if the need be for the sake of simplicity has been avoided.
 
+IDE used Eclipse.
+
 
