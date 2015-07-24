@@ -10,20 +10,20 @@ import main.java.com.westpac.code.visitors.Visitor;
  * 
  * @author gaurangpathare
  */
-public class Rectangle implements Shape {
+public class Rectangle extends AbstractShape{
 
 	public static final String RECTANGLE = "Rectangle";
 	private double length;
 	private double breath;
-
+	
 	public Rectangle(double length, double breath) {
 		this.length = length;
 		this.breath = breath;
 	}
 
 	@Override
-	public double accept(Visitor visitor) {
-		return visitor.visit(this);
+	public void accept(Visitor visitor) {
+		visitor.visit(this);
 	}
 
 	@Override

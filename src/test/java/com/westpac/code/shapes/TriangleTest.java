@@ -25,18 +25,21 @@ public class TriangleTest {
 		double randomNumber = new Random().nextDouble() * 100;
 		double randomNumber1 = new Random().nextDouble() * 100;
 		Triangle triangle = new Triangle(randomNumber, randomNumber1);
-		assertFalse(triangle.accept(new AreaVisitor()) == 0.0);
+		triangle.accept(new AreaVisitor());
+		assertFalse(triangle.getArea() == 0.0);
 	}
 	
 	@Test
 	public void testAcceptReturnsZero(){
 		Triangle triangle = new Triangle(positive, negative);
-		assertTrue(triangle.accept(new AreaVisitor()) == 0.0);
+		triangle.accept(new AreaVisitor());
+		assertTrue(triangle.getArea() == 0.0);
 	}
 	
 	@Test
 	public void testAcceptReturnsCorrectValue(){
 		Triangle triangle = new Triangle(positive, positive);
-		assertTrue(triangle.accept(new AreaVisitor()) == 50);
+		triangle.accept(new AreaVisitor());
+		assertTrue(triangle.getArea() == 50);
 	}
 }

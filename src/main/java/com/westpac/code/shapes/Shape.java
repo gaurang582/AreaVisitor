@@ -13,12 +13,16 @@ public interface Shape {
 	
 	/**
 	 * @param visitor visitor class 
-	 * @return area of the shape
 	 */
-	double accept(Visitor visitor);
+	void accept(Visitor visitor);
 	
 	/**
 	 * @return the type of the shape.
 	 */
 	String getName();
+
+	/**
+	 * @return area of shape
+	 */
+	double getArea();
 }

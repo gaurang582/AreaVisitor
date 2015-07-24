@@ -26,18 +26,21 @@ public class RectangleTest {
 		double randomNumber = new Random().nextDouble() * 100;
 		double randomNumber1 = new Random().nextDouble() * 100;
 		Rectangle rectangle = new Rectangle(randomNumber, randomNumber1);
-		assertFalse(rectangle.accept(new AreaVisitor()) == 0.0);
+		rectangle.accept(new AreaVisitor());
+		assertFalse(rectangle.getArea() == 0.0);
 	}
 	
 	@Test
 	public void testAcceptReturnsZero(){
 		Rectangle rectangle = new Rectangle(positive, negative);
-		assertTrue(rectangle.accept(new AreaVisitor()) == 0.0);
+		rectangle.accept(new AreaVisitor());
+		assertTrue(rectangle.getArea() == 0.0);
 	}
 	
 	@Test
 	public void testAcceptReturnsCorrectValue(){
 		Rectangle rectangle = new Rectangle(positive, positive);
-		assertTrue(rectangle.accept(new AreaVisitor()) == 100);
+		rectangle.accept(new AreaVisitor());
+		assertTrue(rectangle.getArea() == 100);
 	}
 }

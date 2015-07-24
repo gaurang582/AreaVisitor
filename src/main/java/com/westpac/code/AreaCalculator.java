@@ -60,7 +60,8 @@ public static void main(String[] args){
 		
 		if(shapes !=null && !shapes.isEmpty()){
 			for(Shape shape:shapes){
-				String resultString = String.format("Area of shape '%s' is : %s", shape, formatNumber(shape.accept(areaVisitor)));
+				shape.accept(areaVisitor);
+				String resultString = String.format("Area of shape '%s' is : %s", shape, formatNumber(shape.getArea()));
 				System.out.println(resultString);
 			}
 		}

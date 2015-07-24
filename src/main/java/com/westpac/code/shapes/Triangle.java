@@ -9,20 +9,20 @@ import main.java.com.westpac.code.visitors.Visitor;
  * This class represents Circle shape.
  * @author gaurangpathare
  */
-public class Triangle implements Shape{
+public class Triangle extends AbstractShape{
 
 	public static final String TRIANGLE = "Triangle";
 	private double height;
 	private double base;
-
+	
 	public Triangle(double height, double base) {
 		this.height = height;
 		this.base = base;
 	}
 
 	@Override
-	public double accept(Visitor visitor) {
-		return visitor.visit(this);
+	public void accept(Visitor visitor) {
+		visitor.visit(this);
 	}
 
 	@Override

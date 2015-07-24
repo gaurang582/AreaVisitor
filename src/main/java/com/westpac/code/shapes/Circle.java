@@ -10,20 +10,19 @@ import main.java.com.westpac.code.visitors.Visitor;
  * 
  * @author gaurangpathare
  */
-public class Circle implements Shape {
+public class Circle extends AbstractShape {
 
 	public static final String CIRCLE = "Circle";
 	private double radius;
 	private final double pi = Math.PI;
-
-
+	
 	public Circle(double radius) {
 		this.radius = radius;
 	}
 
 	@Override
-	public double accept(Visitor visitor) {
-		return visitor.visit(this);
+	public void accept(Visitor visitor) {
+		visitor.visit(this);
 	}
 
 	@Override
